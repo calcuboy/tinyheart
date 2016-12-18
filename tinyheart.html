@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <title>Tiny Heart</title>
+    <meta  charset="utf-8" />
+    <style type="text/css">
+        .gameContainer{
+            position:relative;
+            margin:0 auto;
+            width:800px;
+            height:600px;
+            border:solid 1px #dfdfdf;
+        }
+        #canvasBack, #canvasFront{
+            position:absolute;
+            width:800px;
+            height:600px;
+        }
+        #canfasBack{
+            z-index:0;
+        }
+        #canvasFront{
+            z-index:1;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="gameContainer">
+                <canvas id="canvasBack" width="800px" height="600px"></canvas>
+                <canvas id="canvasFront" width="800px" height="600px"></canvas>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/commonFunctions.js"></script>
+        <script type="text/javascript" src="js/background.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/ane.js"></script>
+        <script type="text/javascript" src="js/fruit.js"></script>
+        <script type="text/javascript" src="js/mom.js"></script>
+        <script type="text/javascript" src="js/baby.js"></script>
+    </body>
+    </body>
+</html>
