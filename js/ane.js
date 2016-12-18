@@ -21,6 +21,8 @@ aneObj.prototype.draw = function(){
     
     ctxBack.save();
     ctxBack.globalAlpha = 0.6;
+    ctxBack.shadowBlur = 10;
+    ctxBack.shadowColor = "#3b154e";
     ctxBack.strokeStyle = "#3b154e";
     ctxBack.lineWidth = 20;
     ctxBack.lineCap = "round";

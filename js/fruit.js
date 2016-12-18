@@ -21,6 +21,8 @@ var fruitObj = function () {
     
     this.step;
     
+    this.scorePerFruit; //how score per fruit
+    
 };
 
 fruitObj.prototype.pic = new Image();
@@ -36,6 +38,8 @@ fruitObj.prototype.init = function() {
     this.bluePic.src = "./img/blue.png";
     
     this.step = ane.step;
+    
+    this.scorePerFruit = 10;
 };
 
 fruitObj.prototype.draw = function(){
@@ -90,6 +94,30 @@ fruitObj.prototype.draw = function(){
     
 };
 
+fruitObj.prototype.eated = function( i ) {
+    this.state[i] = "die";
+    this.aliveNum --;
+    
+    data.score += this.scorePerFruit;
+    if(data.momDouble > 0) {
+        data.momDouble --;
+        data.score += this.scorePerFruit;
+    } else {
+        mom.state = "nomal";
+    }
+    
+    
+    data.momLife ++;
+    
+    if(this.type[i] == "blue"){
+        data.momDouble ++;
+        mom.state = "double";
+    }
+    
+    circle.spawn(this.x[i], this.y[i], "fruit");
+    
+}
+
 fruitObj.prototype.spawn = function(){
     //random spawn time
     if(this.spawDelta < 500 + Math.random() * this.spawDuration){
@@ -111,6 +139,8 @@ fruitObj.prototype.spawn = function(){
         }
     }
 }
+
+
 
 
 

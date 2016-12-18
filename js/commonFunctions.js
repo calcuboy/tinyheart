@@ -112,3 +112,23 @@ function rndi2(m, n) {
 	var a = Math.random() * (n - m) + m;
 	return Math.floor(a);
 }
+
+function fullScreen( element ){
+	//var docElm = document.documentElement; 
+	//W3C 
+	if (element.requestFullscreen) { 
+	    element.requestFullscreen(); 
+	} 
+	//FireFox 
+	else if (element.mozRequestFullScreen) { 
+	    element.mozRequestFullScreen(); 
+	} 
+	//Chrome等 
+	else if (element.webkitRequestFullScreen) { 
+	    element.webkitRequestFullScreen(); 
+	} 
+	//IE11 
+	else if (element.msRequestFullscreen) { 
+	    element.msRequestFullscreen(); 
+	}
+}
