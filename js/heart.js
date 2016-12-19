@@ -62,8 +62,6 @@ heartObj.prototype.draw = function(){
 
 heartObj.prototype.spawn = function(x, y){
     
-    console.log("Die Num: " + dieNum + "  Alive Num: " + aliveNum);
-    
     for(var i=0; i<this.num; i++) {
         if(this.state[i] == "die") {
             this.state[i] = "alive";
