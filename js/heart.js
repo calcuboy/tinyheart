@@ -18,7 +18,7 @@ heartObj.prototype.init = function(){
     }
     
     for(var j=0; j<this.num; j++) {
-        this.state[i] = "die";
+        this.state[j] = "die";
     }
     
 }
@@ -62,8 +62,10 @@ heartObj.prototype.draw = function(){
 
 heartObj.prototype.spawn = function(x, y){
     
+    console.log("Die Num: " + dieNum + "  Alive Num: " + aliveNum);
+    
     for(var i=0; i<this.num; i++) {
-        if(this.state[i] != "die") {
+        if(this.state[i] == "die") {
             this.state[i] = "alive";
             this.x[i] = x;
             this.y[i] = y;
@@ -72,5 +74,7 @@ heartObj.prototype.spawn = function(x, y){
             return;
         }
     }
+    
+  
     
 }
